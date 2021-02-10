@@ -76,14 +76,27 @@ You can get the R code for most of the analyses you do in Jamovi.
     + You may need to change the name of the dataset to match the name of the data frame in RStudio. data = week3 (or the name of your data frame)
     
 ```{r}
-
+Week4 <- readRDS("~/Library/Mobile Documents/com~apple~CloudDocs/myProject/Week4/stats2021_exer_JamoviDataManip/Week4.rds")
+jmv::descriptives(
+  data = Week4,
+  vars = vars(sex, research, lvst1, lvst2, lvst3, lvst4, lvst4reverse, frst1, frst2, frst3),
+    freq = TRUE,
+    bar = TRUE,
+    mean = FALSE,
+    median = FALSE)
 
 ```
 
 2. Copy the code block for the descriptive statistics for the continuous variables and run it here in RStudio.
 
 ```{r}
-
+jmv::descriptives(
+    data = Week4,
+    vars = vars(height, weight, bmi, FOSS_total, LOSS_total, LOSS_mean, LOSS_total_z, LOSS_mean_z, FOSS_total_z, FOSS_mean_z, FOSS_mean),
+    freq = TRUE,
+    hist = TRUE,
+    box = TRUE,
+    range = TRUE)
 
 ```
 
